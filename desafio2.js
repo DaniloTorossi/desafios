@@ -19,7 +19,7 @@ class Contenedor {
   /* Metodo para  Leer el archivo*/
   async leerArchivo(archivo) {
     try {
-      const data = await fs.readFileSync(archivo, "utf-8");
+      const data = await fs.promises.readFile(archivo, "utf-8");
       return JSON.parse(data);
     } catch (error) {
       console.log(error.message);
